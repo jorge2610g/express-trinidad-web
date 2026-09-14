@@ -1,0 +1,1 @@
+if(sessionStorage.getItem('express-popup-closed'))document.getElementById('popup').classList.add('hidden');document.querySelector('.close').addEventListener('click',()=>sessionStorage.setItem('express-popup-closed','1'));
