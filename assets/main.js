@@ -1,3 +1,7 @@
+const trackEvent = (name, parameters = {}) => {
+  if (typeof window.gtag === 'function') window.gtag('event', name, parameters);
+};
+
 const countdown = document.querySelector('#launch-countdown');
 
 if (countdown) {
@@ -60,6 +64,10 @@ if (form) {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const data = new FormData(form);
+    trackEvent('generate_lead', {
+      lead_type: 'registro_conductor',
+      vehicle_type: String(data.get('vehicle') || '').toLowerCase(),
+    });
     const text = `Hola, quiero registrarme como conductor para el lanzamiento de Express Trinidad.\n\nNombre: ${data.get('name')}\nCelular: ${data.get('phone')}\nVehículo: ${data.get('vehicle')}\nCorreo electrónico: ${data.get('email')}`;
     window.open(`https://api.whatsapp.com/send?phone=59168972863&text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
   });
@@ -157,6 +165,7 @@ if (serviceTabs.length) {
   serviceTabs.forEach((tab) => {
     tab.addEventListener('click', () => {
       showService(tab);
+      trackEvent('select_service', { service_type: tab.dataset.service });
       startServiceRotation();
     });
   });
@@ -174,6 +183,9 @@ if (dailyIncome) {
     document.querySelector('#income-month').textContent = formatBs(daily * 26);
   };
   dailyIncome.addEventListener('input', updateIncome);
+  dailyIncome.addEventListener('change', () => {
+    trackEvent('use_income_calculator', { estimated_daily_income: Number(dailyIncome.value) });
+  });
   updateIncome();
 }
 
@@ -234,6 +246,7 @@ if (zoneMap && zoneChips.length) {
 
   zoneChips.forEach((chip) => chip.addEventListener('click', () => {
     showZone(Number(chip.dataset.zone));
+    trackEvent('select_map_zone', { zone_name: zones[Number(chip.dataset.zone)] });
     startZoneRotation();
   }));
   document.querySelector('#zone-prev').addEventListener('click', () => {
@@ -246,3 +259,20 @@ if (zoneMap && zoneChips.length) {
   });
   startZoneRotation();
 }
+
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('a[href]');
+  if (!link) return;
+  const href = link.href;
+  if (href.includes('api.whatsapp.com') || href.includes('wa.me')) {
+    trackEvent('click_whatsapp', { link_text: link.textContent.trim().slice(0, 80) });
+    return;
+  }
+  if (/facebook\.com|instagram\.com|tiktok\.com/.test(href)) {
+    trackEvent('click_social', { social_url: href });
+    return;
+  }
+  if (link.getAttribute('href') === '#registro') {
+    trackEvent('click_registration_cta', { link_text: link.textContent.trim().slice(0, 80) });
+  }
+});
