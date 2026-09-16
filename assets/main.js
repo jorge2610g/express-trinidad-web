@@ -264,6 +264,9 @@ document.addEventListener('click', (event) => {
   const link = event.target.closest('a[href]');
   if (!link) return;
   const href = link.href;
+  if (link.dataset.appPlatform) {
+    trackEvent('download_app', { platform: link.dataset.appPlatform });
+  }
   if (href.includes('api.whatsapp.com') || href.includes('wa.me')) {
     trackEvent('click_whatsapp', { link_text: link.textContent.trim().slice(0, 80) });
     return;
