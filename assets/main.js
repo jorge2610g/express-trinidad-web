@@ -69,7 +69,7 @@ if (form) {
       vehicle_type: String(data.get('vehicle') || '').toLowerCase(),
     });
     const text = `Hola, quiero registrarme como conductor para el lanzamiento de Express Trinidad.\n\nNombre: ${data.get('name')}\nCelular: ${data.get('phone')}\nVehículo: ${data.get('vehicle')}\nCorreo electrónico: ${data.get('email')}`;
-    window.open(`https://api.whatsapp.com/send?phone=59157657165&text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://api.whatsapp.com/send?phone=59168972863&text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
   });
 }
 
