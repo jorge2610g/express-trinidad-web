@@ -200,3 +200,6 @@ body{width:100%;min-width:0}.topbar,.app-downloads,main,.hero,footer{width:100%;
 
 /* Mayor presencia visual para redes */
 .social-card{padding:20px 18px;gap:14px}.social-card small{font-size:.84rem;font-weight:600}.social-card b{font-size:1.12rem;font-weight:800;line-height:1.15}.social-icon{width:50px;height:50px;flex-basis:50px}.social-icon svg{width:29px;height:29px}@media(max-width:480px){.social-card{padding:17px}.social-card small{font-size:.82rem}.social-card b{font-size:1.08rem}}
+
+/* Fix definitivo: iconos sociales visibles y alineados */
+.social-card>.social-icon{display:grid!important;place-items:center!important;width:52px!important;height:52px!important;min-width:52px!important;flex:0 0 52px!important;border-radius:14px!important;color:#fff!important;overflow:hidden!important}.social-card>.social-icon svg{display:block!important;width:30px!important;height:30px!important;fill:currentColor!important}.social-card>.social-icon.facebook{background:#1877f2!important}.social-card>.social-icon.tiktok{background:#000!important}.social-card>.social-icon.whatsapp{background:#25d366!important}.social-card>.social-icon.gmail{background:#ea4335!important}.social-card>span:last-child{display:block!important;min-width:0}.social-card small,.social-card b{display:block!important}
