@@ -130,3 +130,23 @@ body{width:100%;min-width:0}.topbar,.app-downloads,main,.hero,footer{width:100%;
  .app-downloads .app-button{grid-template-columns:48px 155px!important;column-gap:9px!important}
  .app-downloads .app-button i,.app-downloads .app-button span{transform:translateX(-7px)!important}
 }
+
+
+/* Contenedor único y desplegable de descargas */
+.app-downloads{display:block;padding:22px max(6vw,32px)}
+.app-downloads-shell{width:min(100%,760px);margin:0 auto;padding:18px;border:1px solid #ffffff20;border-radius:24px;background:#ffffff08;box-shadow:0 18px 45px #0003}
+.app-downloads-head{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.app-downloads-copy{min-width:0}
+.app-downloads-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 14px;border:1px solid #ffffff2b;border-radius:12px;background:#ffffff12;color:#fff;font:800 .75rem Manrope;cursor:pointer;white-space:nowrap}
+.app-downloads-toggle b{font-size:1.05rem}.app-downloads-buttons[hidden]{display:none!important}
+.app-downloads-shell .app-downloads-buttons{width:100%;max-width:none;margin:16px 0 0}
+@media(max-width:580px){
+ .app-downloads{padding:14px!important}
+ .app-downloads-shell{padding:14px!important;border-radius:20px!important}
+ .app-downloads-head{display:grid!important;grid-template-columns:1fr auto!important;text-align:left!important}
+ .app-downloads-copy{align-items:flex-start!important;text-align:left!important}
+ .app-downloads-toggle{padding:9px 11px;font-size:.68rem}
+ .app-downloads-shell .app-downloads-buttons{max-width:none!important;margin:13px 0 0!important}
+ .app-downloads-shell .app-button{max-width:none!important}
+}
+@media(max-width:360px){.app-downloads-head{grid-template-columns:1fr}.app-downloads-toggle{width:100%}}
