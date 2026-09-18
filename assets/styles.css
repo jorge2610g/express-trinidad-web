@@ -150,3 +150,7 @@ body{width:100%;min-width:0}.topbar,.app-downloads,main,.hero,footer{width:100%;
  .app-downloads-shell .app-button{max-width:none!important}
 }
 @media(max-width:360px){.app-downloads-head{grid-template-columns:1fr}.app-downloads-toggle{width:100%}}
+
+
+/* Popup de estado de aplicaciones */
+.app-status-popup[hidden]{display:none!important}.app-status-popup{position:fixed;inset:0;z-index:100000;display:flex;align-items:center;justify-content:center;padding:20px;background:#020817cc;backdrop-filter:blur(8px)}.app-status-card{position:relative;width:min(92vw,410px);padding:28px 22px 22px;border:1px solid #00d6ff55;border-radius:22px;background:linear-gradient(145deg,#071a3d,#0c2b60);color:#fff;text-align:center;box-shadow:0 25px 70px #0008}.app-status-close{position:absolute;right:12px;top:10px;width:36px;height:36px;border:0;border-radius:50%;background:#ffffff12;color:#fff;font-size:22px;cursor:pointer}.app-status-icon{font-size:38px}.app-status-card h3{margin:8px 0;font-size:1.55rem}.app-status-card p{margin:0 auto 18px;max-width:330px;color:#c8d9f5;line-height:1.55}.app-status-ok{width:100%;padding:13px 16px;border:0;border-radius:12px;background:#00d6ff;color:#041126;font-weight:800;cursor:pointer}.app-button.webapp{background:linear-gradient(135deg,#0b5cff,#00a8ff);color:#fff}.app-button.webapp i{background:#fff;color:#0876df}
