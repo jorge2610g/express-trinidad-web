@@ -206,3 +206,6 @@ body{width:100%;min-width:0}.topbar,.app-downloads,main,.hero,footer{width:100%;
 
 /* Formulario de registro oculto temporalmente — reactivar cuando se solicite */
 .registration{display:none!important}
+
+/* WhatsApp social: icono estable sin depender de SVG/hover */
+.social-card>.social-wa-fixed{display:grid!important;place-items:center!important;background:#25d366!important;color:#fff!important}.social-card>.social-wa-fixed .wa-symbol{display:grid!important;place-items:center!important;width:30px!important;height:30px!important;font-size:31px!important;line-height:1!important;font-family:Arial,sans-serif!important;font-weight:700!important;color:#fff!important;transform:rotate(-18deg)!important;opacity:1!important;visibility:visible!important}.social-card:hover>.social-wa-fixed .wa-symbol,.social-card:focus>.social-wa-fixed .wa-symbol{opacity:1!important;visibility:visible!important;color:#fff!important}
