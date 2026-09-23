@@ -5,7 +5,7 @@ const trackEvent = (name, parameters = {}) => {
 const countdown = document.querySelector('#launch-countdown');
 
 if (countdown) {
-  const launchDate = new Date('2026-09-22T00:00:00Z').getTime();
+  const launchDate = new Date('2026-10-01T20:00:00-04:00').getTime();
   const fields = {
     days: document.querySelector('#countdown-days'),
     hours: document.querySelector('#countdown-hours'),
@@ -41,7 +41,7 @@ if (launchCapacity) {
   const startingProjection = 5;
   const projectedPerDay = 5;
   const projectionStart = new Date('2026-09-15T04:00:00Z').getTime();
-  const launchDate = new Date('2026-09-22T00:00:00Z').getTime();
+  const launchDate = new Date('2026-10-01T20:00:00-04:00').getTime();
   const effectiveDate = Math.min(Date.now(), launchDate);
   const elapsedDays = Math.max(0, Math.floor((effectiveDate - projectionStart) / 86400000));
   const projectedRegistered = Math.min(totalCapacity, startingProjection + (elapsedDays * projectedPerDay));
