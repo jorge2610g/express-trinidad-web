@@ -313,3 +313,26 @@ a.social-card .social-whatsapp-icon,a.social-card:link .social-whatsapp-icon,a.s
   main>.hero#inicio .countdown-grid b{font-size:2.25rem!important}
   main>.hero#inicio .quick-benefits{justify-content:center!important}
 }
+
+
+/* FIX FINAL 2026-10-02: solo Play Store + App Store, centrados realmente */
+@media(min-width:581px){
+  .app-downloads-shell .app-downloads-buttons{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(180px,240px))!important;
+    grid-auto-flow:row!important;
+    grid-auto-columns:auto!important;
+    justify-content:center!important;
+    align-items:stretch!important;
+    width:100%!important;
+    max-width:none!important;
+    gap:12px!important;
+    margin:16px auto 0!important;
+    overflow:visible!important;
+  }
+  .app-downloads-shell .app-button{
+    width:100%!important;
+    max-width:240px!important;
+    margin:0!important;
+  }
+}
