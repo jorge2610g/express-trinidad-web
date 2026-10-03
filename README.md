@@ -16,7 +16,7 @@ El sitio está preparado para publicarse como página estática. El archivo de e
 
 ## Contenido actualizado
 
-- Lanzamiento el 1 de octubre.
+- Lanzamiento el 10 de octubre.
 - Precio elegido y negociado entre pasajero y conductor.
 - 0% de comisión por lanzamiento.
 - Botón de pánico y contacto con administración.
