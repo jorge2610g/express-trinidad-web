@@ -5,7 +5,7 @@ const trackEvent = (name, parameters = {}) => {
 const countdown = document.querySelector('#launch-countdown');
 
 if (countdown) {
-  const launchDate = new Date('2026-10-10T20:00:00-04:00').getTime();
+  const launchDate = new Date('2026-11-14T00:00:00-04:00').getTime();
   const fields = {
     days: document.querySelector('#countdown-days'),
     hours: document.querySelector('#countdown-hours'),
@@ -18,7 +18,9 @@ if (countdown) {
     const remaining = launchDate - Date.now();
     if (remaining <= 0) {
       countdown.classList.add('launched');
-      message.textContent = '¡Express ya está en Trinidad!';
+      message.textContent = Date.now() < new Date('2026-11-19T00:00:00-04:00').getTime()
+        ? '¡Estamos en FEXPOBENI 2026!'
+        : '¡Gracias por acompañarnos en FEXPOBENI 2026!';
       return false;
     }
 
@@ -41,7 +43,7 @@ if (launchCapacity) {
   const startingProjection = 5;
   const projectedPerDay = 5;
   const projectionStart = new Date('2026-09-15T04:00:00Z').getTime();
-  const launchDate = new Date('2026-10-10T20:00:00-04:00').getTime();
+  const launchDate = new Date('2026-11-14T00:00:00-04:00').getTime();
   const effectiveDate = Math.min(Date.now(), launchDate);
   const elapsedDays = Math.max(0, Math.floor((effectiveDate - projectionStart) / 86400000));
   const projectedRegistered = Math.min(totalCapacity, startingProjection + (elapsedDays * projectedPerDay));
@@ -68,8 +70,8 @@ if (form) {
       lead_type: 'registro_conductor',
       vehicle_type: String(data.get('vehicle') || '').toLowerCase(),
     });
-    const text = `Hola, quiero registrarme como conductor para el lanzamiento de Express Trinidad.\n\nNombre: ${data.get('name')}\nCelular: ${data.get('phone')}\nVehículo: ${data.get('vehicle')}\nCorreo electrónico: ${data.get('email')}`;
-    window.open(`https://api.whatsapp.com/send?phone=59168972863&text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+    const text = `Hola, quiero registrarme como conductor de Express Trinidad.\n\nNombre: ${data.get('name')}\nCelular: ${data.get('phone')}\nVehículo: ${data.get('vehicle')}\nCorreo electrónico: ${data.get('email')}`;
+    window.open(`https://api.whatsapp.com/send?phone=59157657165&text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
   });
 }
 
